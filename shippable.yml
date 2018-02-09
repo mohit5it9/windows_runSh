@@ -5,7 +5,6 @@ jobs:
       nodePool: custom__x86_64__WindowsServer_2016
       container: false
     steps:
-    - IN: windows_tests_that_fail
     - TASK:
         name: non_zero_exit
         script:
