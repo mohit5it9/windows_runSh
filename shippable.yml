@@ -1,0 +1,30 @@
+jobs:
+  - name: windows_simple_non_zero_exit
+    type: runSh
+    runtime:
+      nodePool: custom__x86_64__WindowsServer_2016
+      container: false
+    steps:
+      - IN: windows_tests_that_fail
+      - TASK:
+          name: non_zero_exit
+          script:
+            - '$env:foo = "bar"'
+            - 'echo $env:foo'
+            - exit 1
+            - echo "shouldnt come here"
+    on_success:
+      - script: echo "shouldnt be a success"
+    on_failure:
+      - script: 'echo "failure :("'
+      - script: 'echo $env:foo'
+      - script: '$env:foo = "baz"'
+      - script: 'echo $env:foo'
+      - script: echo "failed"
+    always:
+      - script: 'echo $env:foo'
+      - script: '$env:foo = "always"'
+      - script: 'echo $env:foo'
+      - script: echo "always done"
+    flags:
+      - rc-cd_master_rSync
