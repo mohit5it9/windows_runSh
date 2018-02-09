@@ -1,26 +1,26 @@
 jobs:
   - name: windows_simple_non_zero_exit
-   type: runSh
-   runtime:
-     nodePool: custom__x86_64__WindowsServer_2016
-     container: false
-   steps:
-   - IN: windows_tests_that_fail
-   - TASK:
-       name: non_zero_exit
-       script:
-         - $foo = "bar"
-         - echo $foo
-         - exit 1
-         - echo "shouldn't come here"
-   on_failure:
-     - script: echo "failure :("
-     - script: echo $foo
-     - script: $foo = "baz"
-     - script: echo $foo
-     - script: echo "failed"
-   always:
-     - script: echo $foo
-     - script: $foo = "always"
-     - script: echo $foo
-     - script: echo "always done"
+    type: runSh
+    runtime:
+      nodePool: custom__x86_64__WindowsServer_2016
+      container: false
+    steps:
+    - IN: windows_tests_that_fail
+    - TASK:
+        name: non_zero_exit
+        script:
+          - $foo = "bar"
+          - echo $foo
+          - exit 1
+          - echo "shouldn't come here"
+    on_failure:
+      - script: echo "failure :("
+      - script: echo $foo
+      - script: $foo = "baz"
+      - script: echo $foo
+      - script: echo "failed"
+    always:
+      - script: echo $foo
+      - script: $foo = "always"
+      - script: echo $foo
+      - script: echo "always done"
