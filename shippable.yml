@@ -13,11 +13,9 @@ jobs:
           #- exit 1
           - echo "shouldn't come here"
     on_success:
-      - script: echo "works!!! :("
-      - script: echo $foo
-      - script: $foo = "baz"
-      - script: echo $foo
-      - script: echo "work's;"
+      - script: echo "true" \
+            echo "not true" \
+           echo "yes"
     on_failure:
       - script: echo "failure :("
       - script: echo $foo
