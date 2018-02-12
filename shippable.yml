@@ -3,7 +3,7 @@ jobs:
     type: runSh
     runtime:
       nodePool: custom__x86_64__WindowsServer_2016
-      container: true
+      container: false
     steps:
     - TASK:
         name: non_zero_exit
