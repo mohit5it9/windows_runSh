@@ -12,10 +12,11 @@ jobs:
           - echo $foo
           - echo "should not come here"
     on_success:
-      - script: |
-          ls
-          echo "hello"
-          echo "work's"
+      - script: echo "works!!! :("
+      - script: echo $foo
+      - script: $foo = "baz"
+      - script: echo $foo
+      - script: echo "'work's;"
     on_failure:
       - script: echo "failure :("
       - script: echo $foo
@@ -40,12 +41,20 @@ jobs:
           echo "shouldn't come here"
           echo "shouldn't come here agai'n"
           ls
-    #on_success:
-    #  - script: echo "works!!! :("
-    #  - script: echo $foo
-    #  - script: $foo = "baz"
-    #  - script: echo $foo
-    #  - script: echo "'work's;"
+    on_success:
+      - script: |
+          ps
+          echo "does not work's"
+    on_success:
+      - script: |
+          ls
+          echo "hello :)"
+          echo "script is success & work's"
+    always:
+      - script: |
+          pwd
+          echo "hello from the always section"
+          echo "always work's"
     #on_failure:
     #  - script: echo "failure :("
     #  - script: echo $foo
