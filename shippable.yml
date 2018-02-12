@@ -33,8 +33,7 @@ jobs:
     - TASK:
         name: non_zero_exit_multiline
         - script: >
-            echo "shouldn't come here again"
-            
+            echo "shouldn't come here again"  
     on_failure:
       - script: echo "failure :("
       - script: echo $foo
