@@ -3,11 +3,7 @@ jobs:
     type: runSh
     runtime:
       nodePool: custom__x86_64__WindowsServer_2016
-      container: true
-    flags:
-      - x86-64
-      - windows-server-2016
-      - windows-server-2016-custom-img
+      container: false
     steps:
     - TASK:
         name: non_zero_exit
