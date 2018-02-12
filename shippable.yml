@@ -11,7 +11,7 @@ jobs:
           - $foo="bar"
           #- blah blah
           - echo $foo
-          - echo "should not come here"
+          - echo "should' not come here"
     on_success:
       - script: echo "works!!! :("
       - script: echo $foo
