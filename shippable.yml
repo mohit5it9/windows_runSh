@@ -15,7 +15,7 @@ jobs:
       - script: echo $foo
       - script: $foo = "baz"
       - script: echo $foo
-      - script: echo "'work's;"
+      - script: echo "'work's"
     on_failure:
       - script: echo "failure :("
       - script: echo $foo
