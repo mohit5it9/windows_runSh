@@ -23,3 +23,27 @@ jobs:
       - script: $foo = "always"
       - script: echo $foo
       - script: echo "always done"
+
+  - name: windows_simple_non_zero_exit_multiline
+    type: runSh
+    runtime:
+      nodePool: custom__x86_64__WindowsServer_2016
+      container: false
+    steps:
+    - TASK:
+        name: non_zero_exit_multiline
+        script: >
+          $foo = "bar"
+          echo $foo
+          echo "shouldn't come here"
+    on_failure:
+      - script: echo "failure :("
+      - script: echo $foo
+      - script: $foo = "baz"
+      - script: echo $foo
+      - script: echo "failed"
+    always:
+      - script: echo $foo
+      - script: $foo = "always"
+      - script: echo $foo
+      - script: echo "always done"
