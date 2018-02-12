@@ -8,7 +8,7 @@ jobs:
     - TASK:
         name: non_zero_exit
         script:
-          - echo ls
+          - ls
           - echo "should'nt not come here"
     #on_success:
     #  - script: echo "works!!! :("
