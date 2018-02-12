@@ -9,13 +9,13 @@ jobs:
         name: non_zero_exit
         script: |
           echo $foo
-          echo "should' not come here"
+          echo "should'nt not come here"
     on_success:
       - script: echo "works!!! :("
       - script: echo $foo
       - script: $foo = "baz"
       - script: echo $foo
-      - script: echo "'work's"
+      - script: echo "work's"
     on_failure:
       - script: echo "failure :("
       - script: echo $foo
