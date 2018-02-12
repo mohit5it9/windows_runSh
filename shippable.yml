@@ -8,9 +8,9 @@ jobs:
     - TASK:
         name: non_zero_exit
         script:
-          - $foo = "bar"
+          - $foo="bar"
           - echo $foo
-          - echo "shouldn't come here"
+          - echo "should not come here"
     on_success:
       - script: |
           ls
