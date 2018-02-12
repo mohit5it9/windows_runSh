@@ -10,7 +10,6 @@ jobs:
         script:
           - $foo = "bar"
           - echo $foo
-          #- exit 1
           - echo "shouldn't come here"
     on_success:
       - script: |
