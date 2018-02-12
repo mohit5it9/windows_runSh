@@ -38,10 +38,7 @@ jobs:
     steps:
     - TASK:
         name: non_zero_exit_multiline
-        script: |
-          echo "shouldn't come here"
-          echo "shouldn't come here agai'n"
-          ls
+        script: - echo "hello"
     on_failure:
       - script: |
           ps
