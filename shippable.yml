@@ -37,9 +37,10 @@ jobs:
     steps:
     - TASK:
         name: non_zero_exit_multiline
-        script:
-          - echo "shouldn't come here again"
-          - echo "shouldn't come here again"
+        script: |
+          echo "shouldn't come here"
+          echo "shouldn't come here agai'n"
+          echo ls
     on_success:
       - script: echo "works!!! :("
       - script: echo $foo
