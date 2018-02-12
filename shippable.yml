@@ -10,20 +10,20 @@ jobs:
         script:
           - ls
           - echo "should'nt not come here"
-    #on_success:
-    #  - script: echo "works!!! :("
-    #  - script: echo $foo
-    #  - script: $foo = "baz"
-    #  - script: echo $foo
-    #  - script: echo "work's"
-    #on_failure:
-    #  - script: echo "failure :("
-    #  - script: echo $foo
-    #  - script: $foo = "baz"
-    #  - script: echo $foo
-    #  - script: echo "failed"
-    #always:
-    #  - script: echo $foo
-    #  - script: $foo = "always"
-    #  - script: echo $foo
-    #  - script: echo "always done"
+    on_success:
+      - script: echo "works!!! :("
+      - script: echo $foo
+      - script: $foo = "baz"
+      - script: echo $foo
+      - script: echo "work's"
+    on_failure:
+      - script: echo "failure :("
+      - script: echo $foo
+      - script: $foo = "baz"
+      - script: echo $foo
+      - script: echo "failed"
+    always:
+      - script: echo $foo
+      - script: $foo = "always"
+      - script: echo $foo
+      - script: echo "always done"
