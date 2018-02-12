@@ -40,7 +40,6 @@ jobs:
         name: non_zero_exit_multiline
         script: |
           echo "shouldn't come here"
-          #blah blah
           echo "shouldn't come here agai'n"
           ls
     on_failure:
