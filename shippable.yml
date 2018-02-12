@@ -32,10 +32,9 @@ jobs:
     steps:
     - TASK:
         name: non_zero_exit_multiline
-        script: >
-          $foo = "bar"
-          echo $foo
-          echo "shouldn't come here"
+        - script: >
+            echo "shouldn't come here again"
+            
     on_failure:
       - script: echo "failure :("
       - script: echo $foo
