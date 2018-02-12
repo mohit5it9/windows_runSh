@@ -41,7 +41,7 @@ jobs:
           echo "shouldn't come here"
           echo "shouldn't come here agai'n"
           ls
-    on_success:
+    on_failure:
       - script: |
           ps
           echo "does not work's"
