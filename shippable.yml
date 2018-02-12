@@ -10,7 +10,7 @@ jobs:
         script:
           - $foo = "bar"
           - echo $foo
-          - exit 1
+          #- exit 1
           - echo "shouldn't come here"
     on_failure:
       - script: echo "failure :("
