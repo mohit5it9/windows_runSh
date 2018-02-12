@@ -7,10 +7,9 @@ jobs:
     steps:
     - TASK:
         name: non_zero_exit
-        script:
-          - $foo="bar"
-          - echo $foo
-          - echo "should' not come here"
+        script: |
+          echo $foo
+          echo "should' not come here"
     on_success:
       - script: echo "works!!! :("
       - script: echo $foo
